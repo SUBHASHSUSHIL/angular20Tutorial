@@ -1,0 +1,96 @@
+<p>data-binding works!</p>
+
+<h2>Data Binding</h2>
+<p>Data binding is a core concept in Angular that allows you to synchronize data between the model and the view. It
+    enables you to display dynamic data in your templates and respond to user input.</p>
+<h3>Types of Data Binding</h3>
+<ul>
+    <li><strong>Interpolation</strong>: Binding data from the component to the template using double curly braces
+        ({{" "}})</li>
+    <li><strong>Property Binding</strong>: Binding data from the component to an element's property using square
+        brackets ([ ])</li>
+    <li><strong>Event Binding</strong>: Listening to events in the template and executing methods in the component using
+        parentheses ( )</li>
+    <li><strong>Two-way Binding</strong>: Combining property and event binding using [( )] syntax, often used with forms
+        and input elements( using ngModel).</li>
+
+    <table style="width: 100%;">
+        <tr>
+            <!-- Example of Interpolation -->
+            <td>
+                <h4>Interpolation Example</h4>
+                <p>My name is {{userName}}</p>
+            </td>
+            <td>
+                <p>Course name = {{courseName}}</p>
+            </td>
+            <td>
+                <p>Course name = {{courseName}}</p>
+                <p>Course duration = {{courseDuration}}</p>
+                <p>Course description = {{courseDescription}}</p>
+                <p>Course price = {{coursePrice}}</p>
+                <p>Course rating = {{courseRating}}</p>
+                <p>Course is available = {{courseAvailable}}</p>
+                <p>Course start date = {{courseStartDate}}</p>
+                <p>Course end date = {{courseEndDate}}</p>
+                <p>Course instructor = {{courseInstructor}}</p>
+                <p>Course topics = {{courseTopics}}</p>
+                <p>Course tags = {{courseTags}}</p>
+                <p>Course url = {{courseUrl}}</p>
+                <p>Course pic = {{courseImage}}</p>
+            </td>
+            <td>
+                <h4>Property Binding Example</h4>
+                <img [src]="courseImage" alt="Course Image" />
+                <p [style.color]="courseAvailable ? 'green' : 'red'">Course is available: {{courseAvailable}}</p>
+            </td>
+            <td>
+                <input type="text" value="{{userName}}" />
+            </td>
+        </tr>
+
+        <!-- Example of Property Binding -->
+        <tr>
+            <td>
+                <h4>Property Binding Example</h4>
+                <input [type]="inputType" [value]="userName" [max]="maxlength" [minLength]="minLength" />
+            </td>
+        </tr>
+
+        <!-- Example of Event Binding -->
+        <tr>
+            <td>
+                <h4>Event Binding Example</h4>
+                <button (click)="showWelcomeMessage()">Click Me</button>
+
+                <button (click)="showCourseDetails()">Show Course Details</button>
+
+
+            </td>
+            <td>
+                <select (change)="onCityChange()">
+                    <option value="">New Delhi</option>
+                    <option value="">Banglore</option>
+                    <option value="">Chennei</option>
+                    <option value="">Pathancott</option>
+                    <option value="">Hathua</option>
+                    <option value="">Siwan</option>
+                    <option value="">Surat</option>
+                    <option value="">Merrut</option>
+                    <option value="">Noida</option>
+                    <option value="">Old Delhi</option>
+                </select>
+            </td>
+        </tr>
+
+        <!-- Example of Two-way Binding -->
+        <tr>
+            <td>
+                <h4>Two-way Binding Example</h4>
+                <input type="text" [(ngModel)]="userName" placeholder="Enter your name" />
+            </td>
+            <td>
+                <input type="text" [(ngModel)]="courseName" placeholder="Enter course name" />
+            </td>
+        </tr>
+    </table>

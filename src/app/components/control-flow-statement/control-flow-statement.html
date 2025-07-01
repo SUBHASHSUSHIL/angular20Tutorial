@@ -1,0 +1,87 @@
+<p>control-flow-statement works!</p>
+
+<!-- @if and @else condition examle-->
+<table>
+    <tr>
+        <td>
+            @if(isParaVisiable === true){
+                <span>Smaple</span>
+                <p>This is Sample Paragraph</p>
+            }@else {
+                <small>Small Tag</small>
+                <h3>isParaVisiable has false value</h3>
+            }
+        </td>
+
+        <td><button (click)="showP()">Show Paragraph</button></td>
+        <td><button (click)="hideP()">Hide Paragraph</button></td>
+  
+    </tr>
+</table>
+
+<!-- @else-if for example -->
+ <table>
+    <tr>
+        <td>
+            @if(startMonthName == 'jan'){
+                <span>January</span>
+            }@else if(startMonthName == 'feb'){
+                <span>February</span>
+            }@else if(startMonthName == 'mar'){
+                <span>March</span>
+            }@else {
+                <span>Wrong Input</span>
+            }
+        </td>
+        <td>
+            <input type="text" (ngModel)="startMonthName">
+        </td>
+    </tr>
+ </table>
+
+ <!--@for loop for example-->
+ <table>
+    <tr>
+        <td>
+            <ul>
+                @for (items of cityList; track $index) {
+                    <li>{{items}}</li>
+                }                
+            </ul>
+        </td>
+
+        <td>
+            <select name="" id="">
+                @for (items of cityList; track $index) {
+                    <option value="">{{items}}</option>                }
+            </select>
+        </td>
+    </tr>
+ </table>
+
+ <table>
+    <thead>
+        <tr>
+            <th>Sr.No</th>
+            <th>Name</th>
+            <th>City</th>
+            <th>Status</th>
+        </tr>
+    </thead>
+    <tbody>
+        @for (item of studentList; track $index) {
+            <tr>
+                <td>{{$index + 1}}</td>
+                <td>{{item.Name}}</td>
+                <td>{{item.City}}</td>
+                <td>
+                    @if(item.isActive == true){
+                        <h6>Active</h6>
+                    }@else {
+                        <h6>De-Active</h6>
+                    }
+                </td>
+            </tr>
+        }
+    </tbody>
+ </table>

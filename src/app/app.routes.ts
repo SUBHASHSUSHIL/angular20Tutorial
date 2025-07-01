@@ -3,6 +3,7 @@ import { Admin } from './components/admin/admin';
 import { ControlFlowStatement } from './components/control-flow-statement/control-flow-statement';
 import { DataBinding } from './components/data-binding/data-binding';
 import { SignalEx } from './components/signal-ex/signal-ex';
+import { AttDirective } from './components/att-directive/att-directive';
 
 export const routes: Routes = [
     {
@@ -20,5 +21,9 @@ export const routes: Routes = [
     {
         path: 'signal-ex',
         component: SignalEx
+    },
+    {
+        path: 'att-directive',
+        component: AttDirective
     }
 ];

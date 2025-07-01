@@ -1,3 +1,20 @@
-<h1>Welcome main component</h1>
+<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+    <div class="container-fluid">
+        <ul class="navbar-nav">
+            <li class="nav-item">
+                <a class="nav-link active" routerLink="admin">Admin</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" routerLink="control-flow-statement">Control Flow Statement</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" routerLink="data-binding">Data Binding</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" routerLink="signal-ex">Signal</a>
+            </li>
+        </ul>
+    </div>
+</nav>
 
-<app-control-flow-statement></app-control-flow-statement>
+<router-outlet></router-outlet>

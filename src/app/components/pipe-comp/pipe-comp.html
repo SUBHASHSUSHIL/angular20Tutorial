@@ -1,0 +1,47 @@
+<div class="row">
+    <div class="col-3">
+        firstName => {{firstName}}
+        <br>
+        {{firstName | uppercase}}
+    </div>
+
+    <div class="col-3">
+        courseName => {{courseName}}
+        <br>
+        {{courseName | lowercase}}
+    </div>
+
+    <div class="col-3">
+        courseName => {{courseName}}
+        <br>
+        {{courseName | titlecase}}
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-3">
+        tollNoList -=> {{rollNoList}}
+        <br>
+        {{rollNoList | slice:0:3}}
+        <br>
+        {{rollNoList | slice:3}}
+    </div>
+</div>
+
+<div class="col-3">
+    studentObj => {{studentObj}}
+    <br>
+    {{studentObj | json}}
+
+    <div class="col-3">
+        cerrentDate => {{currentDate}}
+        <br>
+        {{currentDate | date}}
+        <br>
+        {{currentDate | date:'dd-MM-yy'}}
+        <br>
+        {{currentDate | date:'dd-MM-yyyy'}}
+        <br>
+        {{currentDate | date:'dd-MMM-yy'}}
+    </div>
+</div>

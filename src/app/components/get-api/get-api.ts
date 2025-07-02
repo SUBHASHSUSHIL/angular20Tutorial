@@ -39,7 +39,7 @@ export class GetApi implements OnInit {
     debugger;
     this.http.get("https://api.freeprojectapi.com/api/BusBooking/GetAllUsers").subscribe((res:any) => {
       debugger;
-      this.busUserList = res;
+      this.busUserList = res.data;
     })
   }
 }

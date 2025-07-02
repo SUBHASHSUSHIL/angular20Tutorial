@@ -1,0 +1,62 @@
+<div class="row">
+    <div class="col-6">
+        <div class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Website</th>
+                    <th>User Name</th>
+                    <th>Gmail</th>
+                </tr>
+            </thead>
+            <tbody>
+                @for (item of userList; track $index) {
+                    <tr>
+                        <td>{{item.name}}</td>
+                        <td>{{item.website}}</td>
+                        <td>{{item.username}}</td>
+                        <td>{{item.email}}</td>
+                    </tr>
+                }
+            </tbody>
+        </div>
+    </div>
+
+    <div class="col-6">
+        <ul>
+            @for (item of todoList; track $index) {
+                <li>{{item.title}}</li>
+                <li>{{item.completed}}</li>
+            }
+        </ul>
+    </div>
+
+    <div class="col-4">
+        <div class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>User Id</th>
+                    <th>User Name</th>
+                    <th>Role</th>
+                    <th>Full Name</th>
+                </tr>
+            </thead>
+           <tbody>
+  @if (busUserList && busUserList.length > 0) {
+    @for (item of busUserList; track $index) {
+      <tr>
+        <td>{{ item.userId }}</td>
+        <td>{{ item.userName }}</td>
+        <td>{{ item.role }}</td>
+        <td>{{ item.fullName }}</td>
+      </tr>
+    }
+  } @else {
+    <tr>
+      <td colspan="4">No data available</td>
+    </tr>
+  }
+</tbody>
+        </div>
+    </div>
+</div>

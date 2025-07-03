@@ -1,0 +1,75 @@
+<div class="row">
+    <div class="col-7">
+        <div class="card">
+            <div class="card-header bg-success text-center">
+                User List
+            </div>
+            <div class="card-body">
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th>Sr No</th>
+                            <th>Gmail</th>
+                            <th>FullName</th>
+                            <th>Mobile No</th>
+                            <th>Password</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @for (item of userList; track $index) {
+                        <tr>
+                            <td>{{$index + 1}}</td>
+                            <td>{{item.emailId}}</td>
+                            <td>{{item.fullName}}</td>
+                            <td>{{item.mobileNo}}</td>
+                            <td>{{item.password}}</td>
+                            <td>
+
+                            </td>
+                        </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-5">
+        <div class="card">
+            <div class="card-header bg-success text-center">
+                New User
+            </div>
+            <div class="card-body">
+                <form [formGroup]="userForm">
+                    <div class="row">
+                        <div class="col-6">
+                            <label for="">Gmail</label>
+                            <input type="text" formControlName="emailId" class="form-control">
+                        </div>
+                        <div class="col-6">
+                            <label for="">FullName</label>
+                            <input type="text" formControlName="fullName" class="form-control">
+                        </div>
+                        <div class="col-6">
+                            <label for="">MobileNo</label>
+                            <input type="text" formControlName="mobileNo" class="form-control">
+                        </div>
+                        <div class="col-6">
+                            <label for="">Password</label>
+                            <input type="text" formControlName="password" class="form-control">
+                        </div>
+                    </div>
+                    <div class="row pt-3">
+                        <div class="col-6 text-center">
+                            <button class="btn btn-secondary">Reset</button>
+                        </div>
+                        <div class="col-6 text-center">
+                            <button class="btn btn-success" (click)="onSaveUser()">Save</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

@@ -8,6 +8,7 @@ import { PipeComp } from './components/pipe-comp/pipe-comp';
 import { GetApi } from './components/get-api/get-api';
 import { User } from './components/user/user';
 import { ReactiveUser } from './components/reactive-user/reactive-user';
+import { PipeEx } from './components/pipe-ex/pipe-ex';
 
 export const routes: Routes = [
     {
@@ -45,5 +46,9 @@ export const routes: Routes = [
     {
         path: 'reactive-user',
         component: ReactiveUser
+    },
+    {
+        path: 'pipe-ex',
+        component: PipeEx
     }
 ];

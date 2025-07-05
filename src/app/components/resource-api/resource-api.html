@@ -1,1 +1,27 @@
-<p>resource-api works!</p>
+<div class="row">
+    <div class="col-4">
+        {{userData.hasValue()}}
+        {{userData.value()}}
+        {{userData.isLoading()}}
+    </div>
+
+    <div class="col-4">
+        @if(userData.hasValue()){
+        <ul>
+            @for (item of userData.value(); track $index) {
+            <li>{{item.username}}</li>
+            }
+        </ul>
+        }
+    </div>
+
+    <div class="col-4">
+        @if(userList.hasValue()){
+            <ul>
+                @for (item of userList.value(); track $index) {
+                    <li>item.username</li>
+                }
+            </ul>
+        }
+    </div>
+</div>

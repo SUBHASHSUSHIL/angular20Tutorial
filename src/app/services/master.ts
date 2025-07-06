@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Subject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -7,6 +8,8 @@ import { Injectable } from '@angular/core';
 export class Master {
   //store the data
   appName: string = "Angular App";
+
+  onLogin: Subject<boolean> = new Subject<boolean>();
 
   constructor(private http: HttpClient) { }
 

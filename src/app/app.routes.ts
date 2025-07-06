@@ -10,50 +10,71 @@ import { User } from './components/user/user';
 import { ReactiveUser } from './components/reactive-user/reactive-user';
 import { PipeEx } from './components/pipe-ex/pipe-ex';
 import { ResourceApi } from './components/resource-api/resource-api';
+import { Login } from './components/login/login';
+import { Layout } from './components/layout/layout';
 
 export const routes: Routes = [
     {
-        path: 'admin',
-        component: Admin
+        path: '',
+        redirectTo: 'login',
+        pathMatch: 'full'
     },
     {
-        path: "control-flow-statement",
-        component: ControlFlowStatement
+        path: 'login',
+        component: Login
     },
     {
-        path: 'data-binding',
-        component: DataBinding
+        path: '',
+        component: Layout,
+        children: [
+            {
+                path: 'admin',
+                component: Admin
+            },
+            {
+                path: "control-flow-statement",
+                component: ControlFlowStatement
+            },
+            {
+                path: 'data-binding',
+                component: DataBinding
+            },
+            {
+                path: 'login',
+                component: Login
+            },
+            {
+                path: 'signal-ex',
+                component: SignalEx
+            },
+            {
+                path: 'att-directive',
+                component: AttDirective
+            },
+            {
+                path: 'pipe-comp',
+                component: PipeComp
+            },
+            {
+                path: 'get-api',
+                component: GetApi
+            },
+            {
+                path: 'users',
+                component: User
+            },
+            {
+                path: 'reactive-user',
+                component: ReactiveUser
+            },
+            {
+                path: 'pipe-ex',
+                component: PipeEx
+            },
+            {
+                path: 'resource-api',
+                component: ResourceApi
+            }
+        ]
     },
-    {
-        path: 'signal-ex',
-        component: SignalEx
-    },
-    {
-        path: 'att-directive',
-        component: AttDirective
-    },
-    {
-        path: 'pipe-comp',
-        component: PipeComp
-    },
-    {
-        path: 'get-api',
-        component: GetApi
-    },
-    {
-        path: 'users',
-        component: User
-    },
-    {
-        path: 'reactive-user',
-        component: ReactiveUser
-    },
-    {
-        path: 'pipe-ex',
-        component: PipeEx
-    },
-    {
-        path: 'resource-api',
-        component: ResourceApi
-    }
 ];
